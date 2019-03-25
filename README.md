@@ -28,11 +28,11 @@ The code consists of a function that calculates and build the plots of the point
 
 Usage on the paper:
 
- - Kaplan-Yorke: x=kaplanyorke(100000,2/3);
+ - Kaplan-Yorke: x=kaplanyorke(1000000,2/3);
  
- - Coupled logistic: x=coupledlogistic(100000,4,[0 1;0 0],0.1,'kaneko');
+ - Coupled logistic: x=coupledlogistic(1000000,4,[0 1;0 0],0.1,'kaneko');
  
- - Coupled Izhikevich: x=coupledizhikevich(100000,0.02,0.2,-50,1,10.5,[0 1;0 0],0.1);
+ - Coupled Izhikevich: x=coupledizhikevich(1000000,0.02,0.2,-50,1,10.5,[0 1;0 0],0.1);
 
  - Plotwise function: [pmi,pte,pcami,pdi]=pointwiseplot(x(:,1),x(:,2),((max(x(:,1))-min(x(:,1)))/n)\*(1:n-1),((max(x(:,2))-min(x(:,2)))/n)\*(1:n-1),1,0,'bits','x','y',1);
  
