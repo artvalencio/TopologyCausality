@@ -1,4 +1,4 @@
-function [v,u,t,ISI]=coupledizhikevich(a,b,c,d,A,tslen)
+function [v,u,t,ISI]=coupledizhikevich(tslen,a,b,c,d,I0,A,alpha)
 %Izhikevich model for coupled neurons.
 %Each neuron exhibits chaotic behaviour for a=0.02, b=0.2,c=-52,d=1,I=10.5.
 %A is the weigthed adjacency matrix for a coupling
@@ -15,21 +15,25 @@ function [v,u,t,ISI]=coupledizhikevich(a,b,c,d,A,tslen)
    k2=1;
    for i=1:tslen+5000
        t(i+1)=t(i)+tau;
-       v(i+1,1)=v(i,1)+tau*(0.04*v(i,1)^2+5*v(i,1)+140-u(i,1)+A(1,1)+A(1,2));
+       v(i+1,1)=v(i,1)+tau*(0.04*v(i,1)^2+5*v(i,1)+140-u(i,1)+I0+alpha*A(2,1));
        u(i+1,1)=u(i,1)+tau*a*(b*v(i,1)-u(i,1));
-       v(i+1,2)=v(i,2)+tau*(0.04*v(i,2)^2+5*v(i,2)+140-u(i,2)+A(2,2)+A(2,1));
+       v(i+1,2)=v(i,2)+tau*(0.04*v(i,2)^2+5*v(i,2)+140-u(i,2)+I0+alpha*A(1,2));
        u(i+1,2)=u(i,2)+tau*a*(b*v(i,2)-u(i,2));
        if v(i,1)>30
            v(i+1,1)=c;
            u(i+1,1)=u(i,1)+d;
-           peaktime(k1,1)=t(i);
-           k1=k1+1;
+           if i>5001
+                peaktime(k1,1)=t(i);
+                k1=k1+1;
+           end
        end  
        if v(i,2)>30
            v(i+1,2)=c;
            u(i+1,2)=u(i,2)+d;
-           peaktime(k2,2)=t(i);
-           k2=k2+1;
+           if i>5001
+                peaktime(k2,2)=t(i);
+                k2=k2+1;
+           end
        end  
    end
    t=t(5002:end);
