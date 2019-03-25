@@ -34,6 +34,6 @@ Usage on the paper:
  
  - Coupled Izhikevich: x=coupledizhikevich(10000,0.02,0.2,-50,1,10.5,[0 1;0 0]);
 
- - Plotwise function: [pmi,pte,pcami,pdi]=pointwiseplot(x(:,1),x(:,2),((max(x(:,1))-min(x(:,1)))/n)*(1:n-1),((max(x(:,2))-min(x(:,2)))/n)*(1:n-1),1,0,'bits','x','y',5);
+ - Plotwise function: [pmi,pte,pcami,pdi]=pointwiseplot(x(:,1),x(:,2),((max(x(:,1))-min(x(:,1)))/n)\*(1:n-1),((max(x(:,2))-min(x(:,2)))/n)\*(1:n-1),1,0,'bits','x','y',5);
  
  where n is the number of partitions in each variable
