@@ -5,7 +5,7 @@ Codes for "The Topology of Causality" paper
 
 --------------------------------
 
-(CC-BY-NC-SA-4.0) Arthur Valencio[1,\*] and Murilo Baptista[2]
+(CC-BY-NC-SA-4.0) Arthur Valencio[1,\*] and Murilo Baptista[2], 2019
 
 [1] Institute of Computing (IC), State University of Campinas (Unicamp) \
     Research, Innovation and Dissemination Center for Neuromathematics (RIDC NeuroMat)\
