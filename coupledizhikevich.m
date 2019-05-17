@@ -2,7 +2,7 @@ function [v,u,t,ISI]=coupledizhikevich(tslen,a,b,c,d,I0,A,alpha)
 %Izhikevich model for coupled neurons.
 %Each neuron exhibits chaotic behaviour for a=0.02, b=0.2,c=-52,d=1,I=10.5.
 %A is the weigthed adjacency matrix for a coupling
-%Example: [v,u,t,ISI]=coupledizhikevich(0.02,0.2,-52,1,[10.5 0 0.2 10.5],10000);
+%Example: [v,u,t,ISI]=coupledizhikevich(0.02,0.2,-52,1,[10.5 0; 0.2 10.5],10000);
 %Ref: https://www.nature.com/articles/s41598-017-01511-y
 
    tau=0.2;
